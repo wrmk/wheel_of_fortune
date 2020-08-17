@@ -1,6 +1,6 @@
 <h1>Create here new word for game</h1>
 
-<%= form_for :main_scene, url: main_scene_path do |f| %>  
+<%= form_for :main_scene, url: main_scenes_path,method: :post do |f| %>  
 
 <!--   <%if @contact && @contact.errors.any?  %> 
   если @contact не определена и в другой переменной нет значений ошибок, строчка для ошибок не появляется

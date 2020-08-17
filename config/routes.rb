@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: "main_scene#index" # попадание по умолчанию на эту страницу
 
-  resource :main_scene #создаём REST пути
+  resource :main_scenes #создаём REST пути
   get 'new' => 'main_scene#new' #переадресация страниц
 
 
