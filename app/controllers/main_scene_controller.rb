@@ -1,8 +1,9 @@
 class MainSceneController < ApplicationController
 
   def new
-    
   end
+
+  
   def create
     @word = params[:word]
   end
