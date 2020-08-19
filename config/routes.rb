@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  root to: "main_scene#index" # попадание по умолчанию на эту страницу
+  root to: "main_scenes#index" # попадание по умолчанию на эту страницу
 
   resource :main_scenes #создаём REST пути
-  get 'new' => 'main_scene#new' #переадресация страниц
+  get 'new' => 'main_scenes#new' #переадресация страниц
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

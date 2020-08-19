@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class MainSceneControllerTest < ActionDispatch::IntegrationTest
+class MainScenesControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

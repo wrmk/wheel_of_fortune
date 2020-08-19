@@ -1,0 +1,2 @@
+module MainScenesHelper
+end

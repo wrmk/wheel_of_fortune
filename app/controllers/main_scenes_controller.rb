@@ -1,0 +1,2 @@
+class MainScenesController < ApplicationController
+end
