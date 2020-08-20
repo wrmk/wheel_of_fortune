@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "main_scenes#index" # попадание по умолчанию на эту страницу
+  root to: "main_scenes#show" # попадание по умолчанию на эту страницу
 
   resource :main_scenes #создаём REST пути
   get 'new' => 'main_scenes#new' #переадресация страниц

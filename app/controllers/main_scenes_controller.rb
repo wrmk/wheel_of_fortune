@@ -1,10 +1,5 @@
 class MainScenesController < ApplicationController
 
-  def index
-    @@word = ''
-    @sa = "#{@@word} fdsf"
-  end
-
   def new
   end
 
@@ -15,13 +10,13 @@ class MainScenesController < ApplicationController
     # render plain: main_scene_params.inspect
 
 
-    @@word = main_scene_params
-    render action: 'index'
+    @@word = main_scene_params[:word]
+    render action: 'show'
 
   end
 
   def show
-    # @sa == @@word
+    @sa = "#{@@word} fdsf"
   end
 
 
