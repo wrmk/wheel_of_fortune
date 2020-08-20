@@ -16,7 +16,7 @@ class MainScenesController < ApplicationController
   end
 
   def show
-    @sa = "#{@@word} fdsf"
+    defined?(@@word) ? @sa = "#{@@word}" : @sa = ''
   end
 
 
