@@ -16,6 +16,7 @@ class MainScenesController < ApplicationController
   end
 
   def show
+    #показывать word на странице если он уже существует
     defined?(@@word) ? @sa = "#{@@word}" : @sa = ''
   end
 
