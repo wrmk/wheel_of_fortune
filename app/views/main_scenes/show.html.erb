@@ -1,5 +1,21 @@
 <h1>Wheel of fortune</h1>
 
 <p>
-  <%= @sa %>
+  <%= @secret_word %>
 </p>
+
+
+<table align="center">
+  
+  <% @table.each do |s| %>
+    <td>
+        <button style="width:40px;height:40px" type="submit" class="btn btn-primary" width="100px"%>X</button>&nbsp;
+    </td>
+  <%end%>
+
+</table>
+
+<p>
+    <%= link_to 'New secret word', new_main_scenes_path %>
+</p>
+    

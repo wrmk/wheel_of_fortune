@@ -1,5 +1,12 @@
 class MainScenesController < ApplicationController
 
+  def init_secret_word
+    #проверка загадано ли слово, если да, создавать на форме табло
+    defined?(@@word) ? @secret_word = "#{@@word}" : @secret_word = ''
+    @table = @secret_word.split(//)
+
+  end
+
   def new
   end
 
@@ -11,13 +18,17 @@ class MainScenesController < ApplicationController
 
 
     @@word = main_scene_params[:word]
+
+    init_secret_word
+
     render action: 'show'
 
   end
 
   def show
-    #показывать word на странице если он уже существует
-    defined?(@@word) ? @sa = "#{@@word}" : @sa = ''
+
+    init_secret_word
+    
   end
 
 
