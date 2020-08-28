@@ -32,12 +32,17 @@ class MainScenesController < ApplicationController
     
   end
 
+  def update
+    @char = main_scene_params[:char]
+
+  end
+
 
 
   private 
   #какие параметры можно тянуть со страниц
   def main_scene_params
-    params.require(:main_scene).permit(:secret_word)
+    params.require(:main_scene).permit(:secret_word, :char)
   end
 
 end
