@@ -1,18 +1,26 @@
-<h1>Wheel of fortune</h1>
+<head>
+  <h1>Wheel of fortune</h1>
+</head>
 
-<table align="center">
+<body>
 
-  <%if @table != '' %>
-    <% @table.each do |s| %>
-      <td>
-          <button style="width:40px;height:40px" type="submit" class="btn btn-primary" width="100px"%>X</button>&nbsp;
-      </td>
+  <table align="center">
+
+    <%if @table != '' %>
+      <% @table.each do |s| %>
+        <td>
+            <button style="width:40px;height:40px" type="submit" class="btn btn-primary" width="100px"%>X</button>&nbsp;
+        </td>
+      <%end%>
     <%end%>
-  <%end%>
 
-</table>
+  </table>
 
-<p>
-    <%= link_to 'New secret word', new_main_scenes_path %>
-</p>
-    
+  <p>
+      <%= link_to 'New secret word', new_main_scenes_path %> ||
+      <%= link_to 'Guess char', edit_main_scenes_path %>
+  </p>
+   
+  
+
+</body>

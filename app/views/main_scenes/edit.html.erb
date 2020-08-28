@@ -1,0 +1,9 @@
+ <h1>guess char</h1> 
+  <%= form_for :main_scene, url: main_scenes_path, method: :put do |f| %>  
+
+    <p>
+      <%= f.text_area :char %>
+      <%= f.submit 'guess char' %>
+    </p> 
+
+  <%end%> 
