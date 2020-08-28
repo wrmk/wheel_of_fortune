@@ -2,7 +2,8 @@ class MainScenesController < ApplicationController
 
   def init_secret_word
     #проверка загадано ли слово, если да, создавать на форме табло
-    defined?(@@word) ? @secret_word = "#{@@word}" : @secret_word = ''
+    #с удалением пробелов и ентер
+    defined?(@@word) ? @secret_word = "#{@@word.chomp.gsub(/ /,'')}" : @secret_word = ''
     @table = @secret_word.split(//)
 
   end
