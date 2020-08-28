@@ -1,10 +1,10 @@
 class MainScenesController < ApplicationController
 
-  def init_secret_word
+  def init_table
     #проверка загадано ли слово, если да, создавать на форме табло
     #с удалением пробелов и ентер
-    defined?(@@word) ? @secret_word = "#{@@word.chomp.gsub(/ /,'')}" : @secret_word = ''
-    @table = @secret_word.split(//)
+    defined?(@@secret_word) ? @table = @@secret_word.chomp.gsub(/ /,'').split(//) : @table = ''
+    
 
   end
 
@@ -18,9 +18,9 @@ class MainScenesController < ApplicationController
     # render plain: main_scene_params.inspect
 
 
-    @@word = main_scene_params[:word]
+    @@secret_word = main_scene_params[:secret_word]
 
-    init_secret_word
+    init_table
 
     render action: 'show'
 
@@ -28,7 +28,7 @@ class MainScenesController < ApplicationController
 
   def show
 
-    init_secret_word
+    init_table
     
   end
 
@@ -37,7 +37,7 @@ class MainScenesController < ApplicationController
   private 
   #какие параметры можно тянуть со страниц
   def main_scene_params
-    params.require(:main_scene).permit(:word)
+    params.require(:main_scene).permit(:secret_word)
   end
 
 end
