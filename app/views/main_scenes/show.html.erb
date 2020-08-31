@@ -7,7 +7,7 @@
   <table align="center">
 
     <%if @table != '' %>
-      <% @table_hash.each do |key,value| %>
+      <% @table_hidden.each do |key| %>
         <td>
             <button style="width:40px;height:40px" type="submit" class="btn btn-primary" width="100px"%> <%= key%> </button>&nbsp;
         </td>

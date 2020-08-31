@@ -6,9 +6,9 @@ class MainScenesController < ApplicationController
       #удаляем пробелы и ентер и создаем массив букв
       @table = @@secret_word.chomp.gsub(/ /,'').split(//)
       #создаем хэш с 
-      @table_hash = {}
+      @table_hidden = []
       @table.each do |c|
-        @table_hash[c] = 'X'
+        @table_hidden << 'X'
       end
     
     else
