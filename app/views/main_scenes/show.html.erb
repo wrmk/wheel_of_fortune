@@ -18,7 +18,11 @@
 
   <p>
       <%= link_to 'New secret word', new_main_scenes_path %> ||
-      <%= link_to 'Guess char', edit_main_scenes_path %>
+
+      <% if defined?(@table) %>
+        <%= link_to 'Guess char', edit_main_scenes_path %>
+      <%end%>
+
   </p>
    
   
