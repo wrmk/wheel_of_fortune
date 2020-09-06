@@ -3,13 +3,14 @@
 </head>
 
 <body>
-<p>
-  <%= $table %>
-  <%= $table_hidden %>
-</p>
+  <p>
+    <%= $table %>
+    <%= $table_hidden %>
+  </p>
+
   <table align="center">
 
-    <%if $table != '' %>
+    <%if $table != [] %>
       <% $table_hidden.each do |key| %>
         <td>
             <button style="width:40px;height:40px" type="submit" class="btn btn-primary" width="100px"%> <%= key%> </button>&nbsp;
@@ -22,7 +23,7 @@
   <p align="center">
       <%= link_to 'New secret word', new_main_scenes_path %> ||
 
-      <% if defined?($table) %> 
+      <% if $table != [] %> 
         <%= link_to 'Guess char', edit_main_scenes_path %> ||
       <%end%>
 

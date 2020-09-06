@@ -2,12 +2,12 @@ class MainScenesController < ApplicationController
 
   def init_table
     #проверка загадано ли слово, если да 
-    if defined?(@@secret_word) then
+    if defined?($secret_word) then
       #удаляем пробелы и ентер и создаем массив букв
-      $table = @@secret_word.chomp.gsub(/ /,'').split(//)
+      $table = $secret_word.chomp.gsub(/ /,'').split(//)
       
     else
-      $table = ''
+      $table = []
     end
   end
 
@@ -21,7 +21,7 @@ class MainScenesController < ApplicationController
     # render plain: main_scene_params.inspect
 
     $table_hidden = []
-    @@secret_word = main_scene_params[:secret_word]
+    $secret_word = main_scene_params[:secret_word]
 
     init_table
 
@@ -58,8 +58,8 @@ class MainScenesController < ApplicationController
 
   def destroy
 
-    @secret_word = ''
-    $table = ''
+    $secret_word = ''
+    $table = []
     $table_hidden = []
 
     redirect_to main_scenes_path #редирект на главную
