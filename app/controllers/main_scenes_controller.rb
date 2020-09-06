@@ -44,12 +44,13 @@ class MainScenesController < ApplicationController
   def update
     @char = main_scene_params[:char]
     #проверяем есть ли загаданная буква 
-    $table.each do |c|
-      if @char == c
+    $table.each_with_index do |val,index|
+      if val == @char
         # если есть, открываем её в массиве
-        $table_hidden[$table.index(c)] = c
+        $table_hidden[index] = val
       end
-    end
+
+  end
 
 
     render action: 'show'
