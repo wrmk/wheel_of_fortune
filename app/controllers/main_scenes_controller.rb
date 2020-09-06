@@ -6,7 +6,6 @@ class MainScenesController < ApplicationController
       #удаляем пробелы и ентер и создаем массив букв
       $table = @@secret_word.chomp.gsub(/ /,'').split(//)
       
-    
     else
       $table = ''
     end
@@ -26,11 +25,11 @@ class MainScenesController < ApplicationController
 
     init_table
 
-        #создаем хэш с 
+    #создаем хэш с 
       
-      $table.each do |c|
-        $table_hidden << 'X'
-      end
+    $table.each do |c|
+      $table_hidden << 'X'
+    end
 
     render action: 'show'
 
@@ -56,6 +55,15 @@ class MainScenesController < ApplicationController
     render action: 'show'
   end
 
+  def destroy
+
+    @secret_word = ''
+    $table = ''
+    $table_hidden = []
+
+    redirect_to main_scenes_path #редирект на главную
+
+  end
 
 
   private 
