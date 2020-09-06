@@ -3,7 +3,9 @@
 </head>
 
 <body>
-
+<p>
+  <%= $table_hidden%>
+</p>
   <table align="center">
 
     <%if $table != '' %>
@@ -16,7 +18,7 @@
 
   </table>
 
-  <p>
+  <p align="center">
       <%= link_to 'New secret word', new_main_scenes_path %> ||
 
       <% if defined?($table) %>

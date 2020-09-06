@@ -5,11 +5,7 @@ class MainScenesController < ApplicationController
     if defined?(@@secret_word) then
       #удаляем пробелы и ентер и создаем массив букв
       $table = @@secret_word.chomp.gsub(/ /,'').split(//)
-      #создаем хэш с 
       
-      $table.each do |c|
-        $table_hidden << 'X'
-      end
     
     else
       $table = ''
@@ -30,6 +26,12 @@ class MainScenesController < ApplicationController
 
     init_table
 
+        #создаем хэш с 
+      
+      $table.each do |c|
+        $table_hidden << 'X'
+      end
+
     render action: 'show'
 
   end
@@ -49,6 +51,8 @@ class MainScenesController < ApplicationController
         $table_hidden[$table.index(c)] = c
       end
     end
+
+
     render action: 'show'
   end
 
